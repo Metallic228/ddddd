@@ -1,0 +1,67 @@
+﻿<Window x:Class="WpfApp41.UpdateChange"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp41"
+        mc:Ignorable="d"
+        Title="UpdateChange" Height="670" Width="400">
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Arial"/>
+            <Setter Property="FontSize" Value="16"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="FontFamily" Value="Arial"/>
+            <Setter Property="FontSize" Value="16"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="FontFamily" Value="Arial"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Background" Value="#FF00B1D8"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="Grid">
+            <Setter Property="Background" Value="#FF004165"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="25*"/>
+            <ColumnDefinition Width="751*"/>
+            <ColumnDefinition Width="16*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="17*"/>
+            <RowDefinition Height="199*"/>
+            <RowDefinition Height="9*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Column="1" Grid.Row="0" Background="#FF007ACC">
+            <TextBlock Text="Изменение" HorizontalAlignment="Center" FontSize="29"/>
+        </StackPanel>
+        <StackPanel Grid.Column="1" Grid.Row="1" Background="White">
+            <TextBlock Text="Модель" HorizontalAlignment="Left" Margin="20,20,0,5"/>
+            <TextBox x:Name="Model" Margin="20,0" TextChanged="Model_TextChanged"/>
+            <TextBlock Text="Тип лодки" HorizontalAlignment="Left" Margin="20,20,0,5"/>
+            <TextBox x:Name="BoatType" Margin="20,0" TextChanged="BoatType_TextChanged"/>
+            <TextBlock Text="Кол-во палуб" HorizontalAlignment="Left" Margin="20,20,0,5"/>
+            <TextBox x:Name="NumbersOfRows" Margin="20,0" TextChanged="NumbersOfRows_TextChanged"/>
+            <TextBlock Text="Есть мачта? (True-да/False-нет)" HorizontalAlignment="Left" Margin="20,20,0,5"/>
+            <ComboBox x:Name="Mast" Margin="20,0" SelectedIndex="1" SelectionChanged="Mast_SelectionChanged">
+                <ComboBoxItem>True</ComboBoxItem>
+                <ComboBoxItem>False</ComboBoxItem>
+            </ComboBox>
+            <TextBlock Text="Цвет лодки" HorizontalAlignment="Left" Margin="20,20,0,5"/>
+            <TextBox x:Name="Color" Margin="20,0" TextChanged="Color_TextChanged"/>
+            <TextBlock Text="Дерево" HorizontalAlignment="Left" Margin="20,20,0,5"/>
+            <TextBox x:Name="Wood" Margin="20,0" TextChanged="Wood_TextChanged"/>
+            <TextBlock Text="Базовая цена" HorizontalAlignment="Left" Margin="20,20,0,5"/>
+            <TextBox x:Name="BasePrice" Margin="20,0" TextChanged="BasePrice_TextChanged"/>
+            <TextBlock Text="VAT" HorizontalAlignment="Left" Margin="20,20,0,5"/>
+            <TextBox x:Name="VAT" Margin="20,0" TextChanged="VAT_TextChanged"/>
+            <Button Content="Изменить продукцию " Margin="20" HorizontalAlignment="Stretch" Click="Button_Click"/>
+            <TextBox Visibility="Hidden" x:Name="Tex3" TextChanged="Tex3_TextChanged"/>
+        </StackPanel>
+    </Grid>
+</Window>

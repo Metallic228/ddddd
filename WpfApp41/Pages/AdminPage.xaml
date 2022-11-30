@@ -1,0 +1,47 @@
+﻿<Page x:Class="WpfApp41.Pages.AdminPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp41.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AdminPage">
+    <Page.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Arial"/>
+            <Setter Property="FontSize" Value="21"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="FontFamily" Value="Arial"/>
+            <Setter Property="FontSize" Value="21"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="FontFamily" Value="Arial"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="Background" Value="#FF00B1D8"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="Grid">
+            <Setter Property="Background" Value="#FF004165"/>
+        </Style>
+    </Page.Resources>
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.2*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <DataGrid x:Name="dataUser" HorizontalAlignment="Center"  Margin="10,10,10,0" VerticalAlignment="Top" SelectionChanged="DataUser_SelectionChanged" ColumnWidth="*" Grid.Column="1"  />
+        <StackPanel Grid.Column="0">
+            <Button x:Name="Add" Content="Добавить" ToolTip="Добавить пользователя" Margin="0,5" HorizontalAlignment="Stretch" Click="Add_Click"/>
+            <Button x:Name="Delete" Content="Удалить" ToolTip="Удалить пользователя" Margin="0,0,0,5" HorizontalAlignment="Stretch" Click="Delete_Click"/>
+            <Button x:Name="Update"   Content="Изменение" ToolTip="Изменить выбранную строку" Margin="0,0,0,5" HorizontalAlignment="Stretch" Click="Update_Click" />
+            <ComboBox x:Name="Users"  Visibility="Hidden" IsReadOnly="true" IsEditable="true"/>
+            <Button x:Name="Product" Content="К продукции" HorizontalAlignment="Stretch" Click="Product_Click" />
+            <TextBox Name="texU"  TextWrapping="Wrap" Text="" IsReadOnly="True" TextChanged="TextBox_TextChanged"/>
+
+
+
+        </StackPanel>
+    </Grid>
+</Page>
